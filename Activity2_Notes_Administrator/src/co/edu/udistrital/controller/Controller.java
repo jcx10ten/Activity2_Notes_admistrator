@@ -20,6 +20,15 @@ public class Controller {
         estudiantes = new ArrayList<>();
     }
     
+    public void listaEstudiantes(){
+        estudiantes.add(new Estudiante("","","","",""));
+        estudiantes.add(new Estudiante("","","","",""));
+        estudiantes.add(new Estudiante("","","","",""));
+        estudiantes.add(new Estudiante("","","","",""));
+        estudiantes.add(new Estudiante("","","","",""));
+        estudiantes.add(new Estudiante("","","","",""));
+    }
+    
     
     
 }

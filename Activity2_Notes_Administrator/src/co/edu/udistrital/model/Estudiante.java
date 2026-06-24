@@ -9,11 +9,11 @@ public class Estudiante {
     private String nota;
     private String codigo;
 
-    public Estudiante(String nombre, String apellido, String cedula, String nota, String codigo) {
+    public Estudiante(String nombre, String apellido, String cedula, String codigo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
-        this.nota = nota;
+        this.nota = "0";
         this.codigo = codigo;
     }
 
