@@ -39,9 +39,9 @@ public class Controller implements ActionListener {
         ventanaPrincipal.setVisible(true);
     }
     
-    public void listaEstudiantes(){
-        for (int i = 1; i <= 10; i++) {
-            estudiantes.add(new Estudiante("", String.valueOf(i), 0.0));
+    public void listaEstudiantes() {
+        for (int i = 0; i < 10; i++) {
+            estudiantes.add(new Estudiante("", 0));
         }
     }
 
