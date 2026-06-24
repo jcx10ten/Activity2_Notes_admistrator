@@ -61,6 +61,9 @@ public class Controller implements ActionListener {
             Estudiante estudiante = estudiantes.get(i);
             
             String nombreIngesado = nombresEstudiantes[i].getText().trim();
+            if (nombreIngesado.isEmpty()) {
+                throw new IllegalArgumentException("Todos los estudiantes deben tener nombre para continuar.");
+            }
             estudiante.setNombre(nombreIngesado);
             
             String notaIngresada = notasEstudiantes[i].getText().trim();
@@ -87,9 +90,19 @@ public class Controller implements ActionListener {
             String resultado = "";
 
             if(fuente == ventanaPrincipal.getPanelBotones().getBtnAprobados()){
-                
+                Integer aprobados = operacion.estudiantesAprobados(estudiantes);
+                if (aprobados == 0) {
+                    resultado = "Ningun estudiante aprobo\n";
+                } else {
+                    resultado = "La cantidad de estudiantes aprobados es: " + aprobados + "\n";
+                }
             }else if(fuente == ventanaPrincipal.getPanelBotones().getBtnReprobados()){
-                
+                Integer reprobados = operacion.estudiantesReprobados(estudiantes);
+                if (reprobados == 0) {
+                    resultado = "Ningun estudiante reprobo\n";
+                } else {
+                    resultado = "La cantidad de estudiantes reprobados es: " + reprobados + "\n";
+                }
             }else if(fuente == ventanaPrincipal.getPanelBotones().getBtnPromedio()){
                 double promedio = operacion.promedioCurso(estudiantes);
                 resultado = "El promedio del curso es: " + String.format("%.2f", promedio) + "\n";

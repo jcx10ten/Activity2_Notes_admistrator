@@ -6,22 +6,27 @@ public class Operacion {
 
     private static final double NOTA_MINIMA = 3.0;
 
-    public String estudiantesAprobados(List<Estudiante> estudiantes) {
+    public Integer estudiantesAprobados(List<Estudiante> estudiantes) {
+        Integer aprobados = 0;
+
         for (Estudiante e : estudiantes) {
             if (e.getNota() >= NOTA_MINIMA) {
-                return e.getCodigo();
+                aprobados++;
             }
         }
-        return "Ningun estudiante aprobo";
+
+        return aprobados;
     }
 
-    public String estudiantesReprobados(List<Estudiante> estudiantes) {
+    public Integer estudiantesReprobados(List<Estudiante> estudiantes) {
+        Integer reprobados = 0;
         for (Estudiante e : estudiantes) {
-            if (e.getNota() <= NOTA_MINIMA) {
-                return e.getCodigo();
+            if (e.getNota() < NOTA_MINIMA) {
+                reprobados++;
             }
         }
-        return "Ningun estudiante reprobo";
+
+        return reprobados;
     }
 
     public double promedioCurso(List<Estudiante> estudiantes) {
