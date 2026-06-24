@@ -5,6 +5,7 @@
 package co.edu.udistrital.controller;
 
 import co.edu.udistrital.model.Estudiante;
+import co.edu.udistrital.model.Operacion;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +16,12 @@ import java.util.List;
 public class Controller {
     
     private List<Estudiante> estudiantes;
+    private Operacion operacion;
     
     public Controller() { 
         estudiantes = new ArrayList<>();
+        operacion = new Operacion();
+        listaEstudiantes();
     }
     
     public void listaEstudiantes(){
