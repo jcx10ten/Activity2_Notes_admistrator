@@ -11,7 +11,8 @@ package co.edu.udistrital.controller;
 public class AplMain {
     
     public static void main(String Args[]){
-        new Controller();
+        Controller controller = new Controller();
+        controller.run();
     }
     
 }
