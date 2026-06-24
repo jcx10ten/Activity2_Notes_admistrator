@@ -6,30 +6,33 @@ public class Operacion {
 
     private static final double NOTA_MINIMA = 3.0;
 
-    public String estudiantesAprobados(List<Estudiante> estudiantes) {
+    public Integer estudiantesAprobados(List<Estudiante> estudiantes) {
+        Integer aprobados = 0;
+
         for (Estudiante e : estudiantes) {
-            Double nota = Double.parseDouble(e.getNota());
-            if (nota >= NOTA_MINIMA) {
-                return e.getCodigo();
+            if (e.getNota() >= NOTA_MINIMA) {
+                aprobados++;
             }
         }
-        return "Ningun estudiante aprobo";
+
+        return aprobados;
     }
 
-    public String estudiantesReprobados(List<Estudiante> estudiantes) {
+    public Integer estudiantesReprobados(List<Estudiante> estudiantes) {
+        Integer reprobados = 0;
         for (Estudiante e : estudiantes) {
-            Double nota = Double.parseDouble(e.getNota());
-            if (nota <= NOTA_MINIMA) {
-                return e.getCodigo();
+            if (e.getNota() < NOTA_MINIMA) {
+                reprobados++;
             }
         }
-        return "Ningun estudiante reprobo";
+
+        return reprobados;
     }
 
     public double promedioCurso(List<Estudiante> estudiantes) {
         double n = 0;
         for (Estudiante e : estudiantes) {
-            n += Double.parseDouble(e.getNota());
+            n += e.getNota();
         }
         double promedio = n / estudiantes.size();
         return promedio;
@@ -41,7 +44,7 @@ public class Operacion {
         double aux;
         double resultado;
         for (Estudiante e : estudiantes) {
-            aux = Double.parseDouble(e.getNota()) - promedio;
+            aux = e.getNota() - promedio;
             suma += aux * aux;
         }
         resultado = Math.sqrt(suma / estudiantes.size());
@@ -55,11 +58,11 @@ public class Operacion {
         for (int i = 0; i < estudiantes.size(); i++) {
             int numRepeticiones = 0;
             for (int j = 0; j < estudiantes.size(); j++) {
-                if (estudiantes.get(i).getNota().equals(estudiantes.get(j).getNota())) {
+                if (estudiantes.get(i).getNota() == estudiantes.get(j).getNota()) {
                     numRepeticiones++;
                 }
                 if (numRepeticiones > maximoNumRepeticiones) {
-                    moda = Double.parseDouble(estudiantes.get(i).getNota());
+                    moda = estudiantes.get(i).getNota();
                     maximoNumRepeticiones = numRepeticiones;
                 }
             }
