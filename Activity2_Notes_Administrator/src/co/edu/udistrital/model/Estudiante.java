@@ -13,7 +13,7 @@ public class Estudiante {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
-        this.nota = "0";
+        this.nota = nota;
         this.codigo = codigo;
     }
 
