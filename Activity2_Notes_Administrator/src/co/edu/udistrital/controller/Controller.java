@@ -21,12 +21,16 @@ public class Controller {
     }
     
     public void listaEstudiantes(){
-        estudiantes.add(new Estudiante("","","","",""));
-        estudiantes.add(new Estudiante("","","","",""));
-        estudiantes.add(new Estudiante("","","","",""));
-        estudiantes.add(new Estudiante("","","","",""));
-        estudiantes.add(new Estudiante("","","","",""));
-        estudiantes.add(new Estudiante("","","","",""));
+        estudiantes.add(new Estudiante("","","","1"));//nombre,Apellido,Cedula,Codigo
+        estudiantes.add(new Estudiante("","","","2"));
+        estudiantes.add(new Estudiante("","","","3"));
+        estudiantes.add(new Estudiante("","","","4"));
+        estudiantes.add(new Estudiante("","","","5"));
+        estudiantes.add(new Estudiante("","","","6"));
+        estudiantes.add(new Estudiante("","","","7"));
+        estudiantes.add(new Estudiante("","","","8"));
+        estudiantes.add(new Estudiante("","","","9"));
+        estudiantes.add(new Estudiante("","","","10"));
     }
     
     
